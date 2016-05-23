@@ -87,7 +87,7 @@ public:
     }
     void videoSetup(){
     	cv::VideoCapture m_cap;
-        if(!m_cap.open("http://localhost:80/test.jpg")) {
+        if(!m_cap.open("http://localhost:80/webcam.mjpeg")) {
       		cerr << "ERROR: Can't find video device " << m_deviceId << "\n";
       		exit(1);
     	}

@@ -20,7 +20,9 @@ using namespace std;
 #include <vector>
 #include <list>
 #include <sys/time.h>
-
+#include <thread>
+#include <mutex>
+#include <chrono>
 const string usage = "\n"
   "Usage:\n"
   "  apriltags_demo [OPTION...] [IMG1 [IMG2...]]\n"
@@ -145,7 +147,7 @@ class Demo {
 
   list<string> m_imgNames;
 
-  cv::VideoCapture m_cap;
+
 
   int m_exposure;
   int m_gain;
@@ -154,13 +156,16 @@ class Demo {
   Serial m_serial;
 
 public:
-
+  bool m_Available;
+  cv::VideoCapture m_cap;
+  cv::Mat m_image;
+  mutex image_mutex;
   // default constructor
   Demo() :
     // default settings, most can be modified through command line options (see below)
     m_tagDetector(NULL),
     m_tagCodes(AprilTags::tagCodes36h11),
-
+    m_Available(false),
     m_draw(true),
     m_arduino(false),
     m_timing(false),
@@ -326,7 +331,7 @@ public:
       v4l2_set_control(device, V4L2_CID_BRIGHTNESS, m_brightness*256);
     }
     v4l2_close(device);
-#endif 
+#endif
 
     // find and open a USB camera (built in laptop camera, web cam etc)
     m_cap = cv::VideoCapture("http://localhost/webcam.mjpeg");
@@ -462,18 +467,25 @@ public:
 
     cv::Mat image;
     cv::Mat image_gray;
-
+    bool available = false;
     int frame = 0;
     double last_t = tic();
     while (true) {
 
       // capture frame
-      m_cap >> image;
-
-      processImage(image, image_gray);
-
+      image_mutex.lock();
+      if(m_Available){
+      	image = m_image.clone();
+        available = m_Available;
+      	m_Available = false;
+      }
+      image_mutex.unlock();
+      if(available){
+        processImage(image, image_gray);
+        frame++;
+        available = false;
+      }
       // print out the frame rate at which image frames are being processed
-      frame++;
       if (frame % 10 == 0) {
         double t = tic();
         cout << "  " << 10./(t-last_t) << " fps" << endl;
@@ -487,7 +499,18 @@ public:
 
 }; // Demo
 
-
+void getImage(Demo* demo){
+  int count = 0;
+	while(1){
+		demo->image_mutex.lock();
+		demo->m_cap >> demo->m_image;
+		demo->m_Available = true;
+		demo->image_mutex.unlock();
+    count++;
+    cout << "read frame" << count << endl;
+    //std::this_thread::sleep_for(std::chrono::milliseconds(100));
+	}
+}
 // here is were everything begins
 int main(int argc, char* argv[]) {
   Demo demo;
@@ -499,19 +522,12 @@ int main(int argc, char* argv[]) {
 
   if (demo.isVideo()) {
     cout << "Processing video" << endl;
-
     // setup image source, window for drawing, serial port...
     demo.setupVideo();
-
+    thread imageThread(getImage,&demo);
+    imageThread.detach();
     // the actual processing loop where tags are detected and visualized
     demo.loop();
-
-  } else {
-    cout << "Processing image" << endl;
-
-    // process single image
-    demo.loadImages();
-
   }
 
   return 0;

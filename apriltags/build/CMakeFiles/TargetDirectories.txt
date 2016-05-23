@@ -1,0 +1,5 @@
+/home/cqy/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir
+/home/cqy/Desktop/webcam/apriltags/build/example/CMakeFiles/apriltags_demo.dir
+/home/cqy/Desktop/webcam/apriltags/build/example/CMakeFiles/imu.dir
+/home/cqy/Desktop/webcam/apriltags/build/example/CMakeFiles/test.dir
+/home/cqy/Desktop/webcam/apriltags/build/CMakeFiles/tmp.dir
