@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<title>bb8</title>
+<meta lang="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+
+<body ontouchstart=""> <!-- make :active work on iOS -->
+  <button id="admin">control</button>
+  <h1>Control Center</h1>
+  <canvas id="canvas-video"></canvas> <!-- size is decided by server -->
+  <div class="controls">
+    <div class="move disable-select">
+      <span class="arrow up-left"></span>
+      <span class="arrow up"></span>
+      <span class="arrow up-right"></span>
+      <span class="arrow left"></span>
+      <span class="reset"></span>
+      <span class="arrow right"></span>
+      <span class="arrow left-down"></span>
+      <span class="arrow down"></span>
+      <span class="arrow right-down"></span>
+    </div>
+    <div class="rotate disable-select">
+      <span class="unclock-wise"></span>
+      <span class="reset"></span>
+      <span class="clock-wise"></span>
+    </div>
+    <div class="speed disable-select">
+      <label for="move-speed">move speed: 20</label>
+      <input id="move-speed" type="range" min="100" max="3000" step="100" value="500">
+    </div>
+  </div>
+  <script src="scripts/json2.js"></script>
+  <script src="scripts/jquery-2.2.2.min.js"></script>
+  <script src="scripts/jsmpg.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>

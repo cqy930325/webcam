@@ -11,11 +11,10 @@ include(cmake/pods.cmake)
 file(GLOB SOURCE_FILES "src/*.cc")
 include_directories(AprilTags . /opt/local/include)
 add_library(apriltags ${SOURCE_FILES})
-
 find_package(OpenCV)
 include_directories(${OpenCV_INCLUDE_DIRS})
 target_link_libraries(apriltags ${OpenCV_LIBS}) #-pg) #-fopenmp)
-pods_use_pkg_config_packages(apriltags eigen3)
+pods_use_pkg_config_packages(apriltags eigen3 curlpp)
 
 if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
   target_link_libraries(apriltags -L/opt/local/lib/) # MacPorts special treatment...
@@ -30,7 +29,7 @@ pods_install_headers(${header_files} DESTINATION AprilTags/)
 
 pods_install_pkg_config_file(apriltags
     LIBS -lapriltags
-    REQUIRES eigen3 opencv2
+    REQUIRES eigen3 opencv2 curlpp
     VERSION 1.0.0)
 
 add_subdirectory(example)

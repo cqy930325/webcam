@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/cqy/Desktop/webcam/apriltags/example/test.cpp
+/home/qingyu/Desktop/webcam/apriltags/example/test.cpp
 iostream
 -
 cstring
@@ -26,11 +26,11 @@ fcntl.h
 errno.h
 -
 opencv2/opencv.hpp
-/home/cqy/Desktop/webcam/apriltags/example/opencv2/opencv.hpp
+/home/qingyu/Desktop/webcam/apriltags/example/opencv2/opencv.hpp
 AprilTags/TagDetector.h
-/home/cqy/Desktop/webcam/apriltags/example/AprilTags/TagDetector.h
+/home/qingyu/Desktop/webcam/apriltags/example/AprilTags/TagDetector.h
 AprilTags/Tag36h11.h
-/home/cqy/Desktop/webcam/apriltags/example/AprilTags/Tag36h11.h
+/home/qingyu/Desktop/webcam/apriltags/example/AprilTags/Tag36h11.h
 cmath
 -
 

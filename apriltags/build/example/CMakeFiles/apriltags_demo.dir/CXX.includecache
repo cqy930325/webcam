@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/cqy/Desktop/webcam/apriltags/example/Serial.h
+/home/qingyu/Desktop/webcam/apriltags/example/Serial.h
 string
 -
 
-/home/cqy/Desktop/webcam/apriltags/example/apriltags_demo.cpp
+/home/qingyu/Desktop/webcam/apriltags/example/apriltags_demo.cpp
 iostream
 -
 cstring
@@ -27,6 +27,18 @@ mutex
 -
 chrono
 -
+cstdlib
+-
+cerrno
+-
+curlpp/cURLpp.hpp
+-
+curlpp/Easy.hpp
+-
+curlpp/Options.hpp
+-
+curlpp/Exception.hpp
+-
 libv4l2.h
 -
 linux/videodev2.h
@@ -36,23 +48,23 @@ fcntl.h
 errno.h
 -
 opencv2/opencv.hpp
-/home/cqy/Desktop/webcam/apriltags/example/opencv2/opencv.hpp
+/home/qingyu/Desktop/webcam/apriltags/example/opencv2/opencv.hpp
 AprilTags/TagDetector.h
-/home/cqy/Desktop/webcam/apriltags/example/AprilTags/TagDetector.h
+/home/qingyu/Desktop/webcam/apriltags/example/AprilTags/TagDetector.h
 AprilTags/Tag16h5.h
-/home/cqy/Desktop/webcam/apriltags/example/AprilTags/Tag16h5.h
+/home/qingyu/Desktop/webcam/apriltags/example/AprilTags/Tag16h5.h
 AprilTags/Tag25h7.h
-/home/cqy/Desktop/webcam/apriltags/example/AprilTags/Tag25h7.h
+/home/qingyu/Desktop/webcam/apriltags/example/AprilTags/Tag25h7.h
 AprilTags/Tag25h9.h
-/home/cqy/Desktop/webcam/apriltags/example/AprilTags/Tag25h9.h
+/home/qingyu/Desktop/webcam/apriltags/example/AprilTags/Tag25h9.h
 AprilTags/Tag36h9.h
-/home/cqy/Desktop/webcam/apriltags/example/AprilTags/Tag36h9.h
+/home/qingyu/Desktop/webcam/apriltags/example/AprilTags/Tag36h9.h
 AprilTags/Tag36h11.h
-/home/cqy/Desktop/webcam/apriltags/example/AprilTags/Tag36h11.h
+/home/qingyu/Desktop/webcam/apriltags/example/AprilTags/Tag36h11.h
 unistd.h
 -
 Serial.h
-/home/cqy/Desktop/webcam/apriltags/example/Serial.h
+/home/qingyu/Desktop/webcam/apriltags/example/Serial.h
 cmath
 -
 

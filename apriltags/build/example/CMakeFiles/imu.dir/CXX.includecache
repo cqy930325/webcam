@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/cqy/Desktop/webcam/apriltags/example/Serial.cpp
+/home/qingyu/Desktop/webcam/apriltags/example/Serial.cpp
 fcntl.h
 -
 termios.h
@@ -20,13 +20,13 @@ sstream
 unistd.h
 -
 Serial.h
-/home/cqy/Desktop/webcam/apriltags/example/Serial.h
+/home/qingyu/Desktop/webcam/apriltags/example/Serial.h
 
-/home/cqy/Desktop/webcam/apriltags/example/Serial.h
+/home/qingyu/Desktop/webcam/apriltags/example/Serial.h
 string
 -
 
-/home/cqy/Desktop/webcam/apriltags/example/imu.cpp
+/home/qingyu/Desktop/webcam/apriltags/example/imu.cpp
 iostream
 -
 string
@@ -36,5 +36,5 @@ stdio.h
 math.h
 -
 Serial.h
-/home/cqy/Desktop/webcam/apriltags/example/Serial.h
+/home/qingyu/Desktop/webcam/apriltags/example/Serial.h
 

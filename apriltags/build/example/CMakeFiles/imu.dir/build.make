@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cqy/Desktop/webcam/apriltags
+CMAKE_SOURCE_DIR = /home/qingyu/Desktop/webcam/apriltags
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cqy/Desktop/webcam/apriltags/build
+CMAKE_BINARY_DIR = /home/qingyu/Desktop/webcam/apriltags/build
 
 # Include any dependencies generated for this target.
 include example/CMakeFiles/imu.dir/depend.make
@@ -51,17 +51,17 @@ include example/CMakeFiles/imu.dir/flags.make
 
 example/CMakeFiles/imu.dir/imu.cpp.o: example/CMakeFiles/imu.dir/flags.make
 example/CMakeFiles/imu.dir/imu.cpp.o: ../example/imu.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cqy/Desktop/webcam/apriltags/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/qingyu/Desktop/webcam/apriltags/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object example/CMakeFiles/imu.dir/imu.cpp.o"
-	cd /home/cqy/Desktop/webcam/apriltags/build/example && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/imu.dir/imu.cpp.o -c /home/cqy/Desktop/webcam/apriltags/example/imu.cpp
+	cd /home/qingyu/Desktop/webcam/apriltags/build/example && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/imu.dir/imu.cpp.o -c /home/qingyu/Desktop/webcam/apriltags/example/imu.cpp
 
 example/CMakeFiles/imu.dir/imu.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/imu.dir/imu.cpp.i"
-	cd /home/cqy/Desktop/webcam/apriltags/build/example && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cqy/Desktop/webcam/apriltags/example/imu.cpp > CMakeFiles/imu.dir/imu.cpp.i
+	cd /home/qingyu/Desktop/webcam/apriltags/build/example && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/qingyu/Desktop/webcam/apriltags/example/imu.cpp > CMakeFiles/imu.dir/imu.cpp.i
 
 example/CMakeFiles/imu.dir/imu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/imu.dir/imu.cpp.s"
-	cd /home/cqy/Desktop/webcam/apriltags/build/example && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cqy/Desktop/webcam/apriltags/example/imu.cpp -o CMakeFiles/imu.dir/imu.cpp.s
+	cd /home/qingyu/Desktop/webcam/apriltags/build/example && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/qingyu/Desktop/webcam/apriltags/example/imu.cpp -o CMakeFiles/imu.dir/imu.cpp.s
 
 example/CMakeFiles/imu.dir/imu.cpp.o.requires:
 .PHONY : example/CMakeFiles/imu.dir/imu.cpp.o.requires
@@ -74,17 +74,17 @@ example/CMakeFiles/imu.dir/imu.cpp.o.provides.build: example/CMakeFiles/imu.dir/
 
 example/CMakeFiles/imu.dir/Serial.cpp.o: example/CMakeFiles/imu.dir/flags.make
 example/CMakeFiles/imu.dir/Serial.cpp.o: ../example/Serial.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cqy/Desktop/webcam/apriltags/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/qingyu/Desktop/webcam/apriltags/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object example/CMakeFiles/imu.dir/Serial.cpp.o"
-	cd /home/cqy/Desktop/webcam/apriltags/build/example && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/imu.dir/Serial.cpp.o -c /home/cqy/Desktop/webcam/apriltags/example/Serial.cpp
+	cd /home/qingyu/Desktop/webcam/apriltags/build/example && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/imu.dir/Serial.cpp.o -c /home/qingyu/Desktop/webcam/apriltags/example/Serial.cpp
 
 example/CMakeFiles/imu.dir/Serial.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/imu.dir/Serial.cpp.i"
-	cd /home/cqy/Desktop/webcam/apriltags/build/example && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cqy/Desktop/webcam/apriltags/example/Serial.cpp > CMakeFiles/imu.dir/Serial.cpp.i
+	cd /home/qingyu/Desktop/webcam/apriltags/build/example && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/qingyu/Desktop/webcam/apriltags/example/Serial.cpp > CMakeFiles/imu.dir/Serial.cpp.i
 
 example/CMakeFiles/imu.dir/Serial.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/imu.dir/Serial.cpp.s"
-	cd /home/cqy/Desktop/webcam/apriltags/build/example && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cqy/Desktop/webcam/apriltags/example/Serial.cpp -o CMakeFiles/imu.dir/Serial.cpp.s
+	cd /home/qingyu/Desktop/webcam/apriltags/build/example && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/qingyu/Desktop/webcam/apriltags/example/Serial.cpp -o CMakeFiles/imu.dir/Serial.cpp.s
 
 example/CMakeFiles/imu.dir/Serial.cpp.o.requires:
 .PHONY : example/CMakeFiles/imu.dir/Serial.cpp.o.requires
@@ -111,14 +111,13 @@ bin/imu: /usr/lib/x86_64-linux-gnu/libopencv_videostab.so.2.4.8
 bin/imu: /usr/lib/x86_64-linux-gnu/libopencv_ts.so.2.4.8
 bin/imu: /usr/lib/x86_64-linux-gnu/libopencv_superres.so.2.4.8
 bin/imu: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.2.4.8
-bin/imu: /usr/lib/x86_64-linux-gnu/libopencv_contrib.so.2.4.8
-bin/imu: /usr/lib/x86_64-linux-gnu/libopencv_nonfree.so.2.4.8
 bin/imu: /usr/lib/x86_64-linux-gnu/libopencv_ocl.so.2.4.8
 bin/imu: /usr/lib/x86_64-linux-gnu/libopencv_gpu.so.2.4.8
 bin/imu: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.2.4.8
-bin/imu: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8
 bin/imu: /usr/lib/x86_64-linux-gnu/libopencv_legacy.so.2.4.8
+bin/imu: /usr/lib/x86_64-linux-gnu/libopencv_contrib.so.2.4.8
 bin/imu: /usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.8
+bin/imu: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8
 bin/imu: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.2.4.8
 bin/imu: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.8
 bin/imu: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.2.4.8
@@ -128,7 +127,7 @@ bin/imu: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.2.4.8
 bin/imu: /usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4.8
 bin/imu: example/CMakeFiles/imu.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../bin/imu"
-	cd /home/cqy/Desktop/webcam/apriltags/build/example && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/imu.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/qingyu/Desktop/webcam/apriltags/build/example && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/imu.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 example/CMakeFiles/imu.dir/build: bin/imu
@@ -139,10 +138,10 @@ example/CMakeFiles/imu.dir/requires: example/CMakeFiles/imu.dir/Serial.cpp.o.req
 .PHONY : example/CMakeFiles/imu.dir/requires
 
 example/CMakeFiles/imu.dir/clean:
-	cd /home/cqy/Desktop/webcam/apriltags/build/example && $(CMAKE_COMMAND) -P CMakeFiles/imu.dir/cmake_clean.cmake
+	cd /home/qingyu/Desktop/webcam/apriltags/build/example && $(CMAKE_COMMAND) -P CMakeFiles/imu.dir/cmake_clean.cmake
 .PHONY : example/CMakeFiles/imu.dir/clean
 
 example/CMakeFiles/imu.dir/depend:
-	cd /home/cqy/Desktop/webcam/apriltags/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cqy/Desktop/webcam/apriltags /home/cqy/Desktop/webcam/apriltags/example /home/cqy/Desktop/webcam/apriltags/build /home/cqy/Desktop/webcam/apriltags/build/example /home/cqy/Desktop/webcam/apriltags/build/example/CMakeFiles/imu.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/qingyu/Desktop/webcam/apriltags/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/qingyu/Desktop/webcam/apriltags /home/qingyu/Desktop/webcam/apriltags/example /home/qingyu/Desktop/webcam/apriltags/build /home/qingyu/Desktop/webcam/apriltags/build/example /home/qingyu/Desktop/webcam/apriltags/build/example/CMakeFiles/imu.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : example/CMakeFiles/imu.dir/depend
 

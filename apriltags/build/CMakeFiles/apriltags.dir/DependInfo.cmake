@@ -4,20 +4,20 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/cqy/Desktop/webcam/apriltags/src/Edge.cc" "/home/cqy/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/Edge.cc.o"
-  "/home/cqy/Desktop/webcam/apriltags/src/FloatImage.cc" "/home/cqy/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/FloatImage.cc.o"
-  "/home/cqy/Desktop/webcam/apriltags/src/GLine2D.cc" "/home/cqy/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/GLine2D.cc.o"
-  "/home/cqy/Desktop/webcam/apriltags/src/GLineSegment2D.cc" "/home/cqy/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/GLineSegment2D.cc.o"
-  "/home/cqy/Desktop/webcam/apriltags/src/Gaussian.cc" "/home/cqy/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/Gaussian.cc.o"
-  "/home/cqy/Desktop/webcam/apriltags/src/GrayModel.cc" "/home/cqy/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/GrayModel.cc.o"
-  "/home/cqy/Desktop/webcam/apriltags/src/Homography33.cc" "/home/cqy/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/Homography33.cc.o"
-  "/home/cqy/Desktop/webcam/apriltags/src/MathUtil.cc" "/home/cqy/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/MathUtil.cc.o"
-  "/home/cqy/Desktop/webcam/apriltags/src/Quad.cc" "/home/cqy/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/Quad.cc.o"
-  "/home/cqy/Desktop/webcam/apriltags/src/Segment.cc" "/home/cqy/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/Segment.cc.o"
-  "/home/cqy/Desktop/webcam/apriltags/src/TagDetection.cc" "/home/cqy/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/TagDetection.cc.o"
-  "/home/cqy/Desktop/webcam/apriltags/src/TagDetector.cc" "/home/cqy/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/TagDetector.cc.o"
-  "/home/cqy/Desktop/webcam/apriltags/src/TagFamily.cc" "/home/cqy/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/TagFamily.cc.o"
-  "/home/cqy/Desktop/webcam/apriltags/src/UnionFindSimple.cc" "/home/cqy/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/UnionFindSimple.cc.o"
+  "/home/qingyu/Desktop/webcam/apriltags/src/Edge.cc" "/home/qingyu/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/Edge.cc.o"
+  "/home/qingyu/Desktop/webcam/apriltags/src/FloatImage.cc" "/home/qingyu/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/FloatImage.cc.o"
+  "/home/qingyu/Desktop/webcam/apriltags/src/GLine2D.cc" "/home/qingyu/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/GLine2D.cc.o"
+  "/home/qingyu/Desktop/webcam/apriltags/src/GLineSegment2D.cc" "/home/qingyu/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/GLineSegment2D.cc.o"
+  "/home/qingyu/Desktop/webcam/apriltags/src/Gaussian.cc" "/home/qingyu/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/Gaussian.cc.o"
+  "/home/qingyu/Desktop/webcam/apriltags/src/GrayModel.cc" "/home/qingyu/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/GrayModel.cc.o"
+  "/home/qingyu/Desktop/webcam/apriltags/src/Homography33.cc" "/home/qingyu/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/Homography33.cc.o"
+  "/home/qingyu/Desktop/webcam/apriltags/src/MathUtil.cc" "/home/qingyu/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/MathUtil.cc.o"
+  "/home/qingyu/Desktop/webcam/apriltags/src/Quad.cc" "/home/qingyu/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/Quad.cc.o"
+  "/home/qingyu/Desktop/webcam/apriltags/src/Segment.cc" "/home/qingyu/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/Segment.cc.o"
+  "/home/qingyu/Desktop/webcam/apriltags/src/TagDetection.cc" "/home/qingyu/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/TagDetection.cc.o"
+  "/home/qingyu/Desktop/webcam/apriltags/src/TagDetector.cc" "/home/qingyu/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/TagDetector.cc.o"
+  "/home/qingyu/Desktop/webcam/apriltags/src/TagFamily.cc" "/home/qingyu/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/TagFamily.cc.o"
+  "/home/qingyu/Desktop/webcam/apriltags/src/UnionFindSimple.cc" "/home/qingyu/Desktop/webcam/apriltags/build/CMakeFiles/apriltags.dir/src/UnionFindSimple.cc.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

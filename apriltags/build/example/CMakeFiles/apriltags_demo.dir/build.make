@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cqy/Desktop/webcam/apriltags
+CMAKE_SOURCE_DIR = /home/qingyu/Desktop/webcam/apriltags
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cqy/Desktop/webcam/apriltags/build
+CMAKE_BINARY_DIR = /home/qingyu/Desktop/webcam/apriltags/build
 
 # Include any dependencies generated for this target.
 include example/CMakeFiles/apriltags_demo.dir/depend.make
@@ -51,17 +51,17 @@ include example/CMakeFiles/apriltags_demo.dir/flags.make
 
 example/CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.o: example/CMakeFiles/apriltags_demo.dir/flags.make
 example/CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.o: ../example/apriltags_demo.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cqy/Desktop/webcam/apriltags/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/qingyu/Desktop/webcam/apriltags/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object example/CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.o"
-	cd /home/cqy/Desktop/webcam/apriltags/build/example && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.o -c /home/cqy/Desktop/webcam/apriltags/example/apriltags_demo.cpp
+	cd /home/qingyu/Desktop/webcam/apriltags/build/example && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.o -c /home/qingyu/Desktop/webcam/apriltags/example/apriltags_demo.cpp
 
 example/CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.i"
-	cd /home/cqy/Desktop/webcam/apriltags/build/example && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cqy/Desktop/webcam/apriltags/example/apriltags_demo.cpp > CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.i
+	cd /home/qingyu/Desktop/webcam/apriltags/build/example && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/qingyu/Desktop/webcam/apriltags/example/apriltags_demo.cpp > CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.i
 
 example/CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.s"
-	cd /home/cqy/Desktop/webcam/apriltags/build/example && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cqy/Desktop/webcam/apriltags/example/apriltags_demo.cpp -o CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.s
+	cd /home/qingyu/Desktop/webcam/apriltags/build/example && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/qingyu/Desktop/webcam/apriltags/example/apriltags_demo.cpp -o CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.s
 
 example/CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.o.requires:
 .PHONY : example/CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.o.requires
@@ -74,17 +74,17 @@ example/CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.o.provides.build: examp
 
 example/CMakeFiles/apriltags_demo.dir/Serial.cpp.o: example/CMakeFiles/apriltags_demo.dir/flags.make
 example/CMakeFiles/apriltags_demo.dir/Serial.cpp.o: ../example/Serial.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/cqy/Desktop/webcam/apriltags/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/qingyu/Desktop/webcam/apriltags/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object example/CMakeFiles/apriltags_demo.dir/Serial.cpp.o"
-	cd /home/cqy/Desktop/webcam/apriltags/build/example && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/apriltags_demo.dir/Serial.cpp.o -c /home/cqy/Desktop/webcam/apriltags/example/Serial.cpp
+	cd /home/qingyu/Desktop/webcam/apriltags/build/example && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/apriltags_demo.dir/Serial.cpp.o -c /home/qingyu/Desktop/webcam/apriltags/example/Serial.cpp
 
 example/CMakeFiles/apriltags_demo.dir/Serial.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/apriltags_demo.dir/Serial.cpp.i"
-	cd /home/cqy/Desktop/webcam/apriltags/build/example && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cqy/Desktop/webcam/apriltags/example/Serial.cpp > CMakeFiles/apriltags_demo.dir/Serial.cpp.i
+	cd /home/qingyu/Desktop/webcam/apriltags/build/example && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/qingyu/Desktop/webcam/apriltags/example/Serial.cpp > CMakeFiles/apriltags_demo.dir/Serial.cpp.i
 
 example/CMakeFiles/apriltags_demo.dir/Serial.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/apriltags_demo.dir/Serial.cpp.s"
-	cd /home/cqy/Desktop/webcam/apriltags/build/example && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cqy/Desktop/webcam/apriltags/example/Serial.cpp -o CMakeFiles/apriltags_demo.dir/Serial.cpp.s
+	cd /home/qingyu/Desktop/webcam/apriltags/build/example && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/qingyu/Desktop/webcam/apriltags/example/Serial.cpp -o CMakeFiles/apriltags_demo.dir/Serial.cpp.s
 
 example/CMakeFiles/apriltags_demo.dir/Serial.cpp.o.requires:
 .PHONY : example/CMakeFiles/apriltags_demo.dir/Serial.cpp.o.requires
@@ -111,14 +111,13 @@ bin/apriltags_demo: /usr/lib/x86_64-linux-gnu/libopencv_videostab.so.2.4.8
 bin/apriltags_demo: /usr/lib/x86_64-linux-gnu/libopencv_ts.so.2.4.8
 bin/apriltags_demo: /usr/lib/x86_64-linux-gnu/libopencv_superres.so.2.4.8
 bin/apriltags_demo: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.2.4.8
-bin/apriltags_demo: /usr/lib/x86_64-linux-gnu/libopencv_contrib.so.2.4.8
-bin/apriltags_demo: /usr/lib/x86_64-linux-gnu/libopencv_nonfree.so.2.4.8
 bin/apriltags_demo: /usr/lib/x86_64-linux-gnu/libopencv_ocl.so.2.4.8
 bin/apriltags_demo: /usr/lib/x86_64-linux-gnu/libopencv_gpu.so.2.4.8
 bin/apriltags_demo: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.2.4.8
-bin/apriltags_demo: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8
 bin/apriltags_demo: /usr/lib/x86_64-linux-gnu/libopencv_legacy.so.2.4.8
+bin/apriltags_demo: /usr/lib/x86_64-linux-gnu/libopencv_contrib.so.2.4.8
 bin/apriltags_demo: /usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.8
+bin/apriltags_demo: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8
 bin/apriltags_demo: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.2.4.8
 bin/apriltags_demo: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.8
 bin/apriltags_demo: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.2.4.8
@@ -128,7 +127,7 @@ bin/apriltags_demo: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.2.4.8
 bin/apriltags_demo: /usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4.8
 bin/apriltags_demo: example/CMakeFiles/apriltags_demo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../bin/apriltags_demo"
-	cd /home/cqy/Desktop/webcam/apriltags/build/example && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/apriltags_demo.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/qingyu/Desktop/webcam/apriltags/build/example && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/apriltags_demo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 example/CMakeFiles/apriltags_demo.dir/build: bin/apriltags_demo
@@ -139,10 +138,10 @@ example/CMakeFiles/apriltags_demo.dir/requires: example/CMakeFiles/apriltags_dem
 .PHONY : example/CMakeFiles/apriltags_demo.dir/requires
 
 example/CMakeFiles/apriltags_demo.dir/clean:
-	cd /home/cqy/Desktop/webcam/apriltags/build/example && $(CMAKE_COMMAND) -P CMakeFiles/apriltags_demo.dir/cmake_clean.cmake
+	cd /home/qingyu/Desktop/webcam/apriltags/build/example && $(CMAKE_COMMAND) -P CMakeFiles/apriltags_demo.dir/cmake_clean.cmake
 .PHONY : example/CMakeFiles/apriltags_demo.dir/clean
 
 example/CMakeFiles/apriltags_demo.dir/depend:
-	cd /home/cqy/Desktop/webcam/apriltags/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cqy/Desktop/webcam/apriltags /home/cqy/Desktop/webcam/apriltags/example /home/cqy/Desktop/webcam/apriltags/build /home/cqy/Desktop/webcam/apriltags/build/example /home/cqy/Desktop/webcam/apriltags/build/example/CMakeFiles/apriltags_demo.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/qingyu/Desktop/webcam/apriltags/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/qingyu/Desktop/webcam/apriltags /home/qingyu/Desktop/webcam/apriltags/example /home/qingyu/Desktop/webcam/apriltags/build /home/qingyu/Desktop/webcam/apriltags/build/example /home/qingyu/Desktop/webcam/apriltags/build/example/CMakeFiles/apriltags_demo.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : example/CMakeFiles/apriltags_demo.dir/depend
 

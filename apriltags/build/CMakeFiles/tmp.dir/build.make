@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cqy/Desktop/webcam/apriltags
+CMAKE_SOURCE_DIR = /home/qingyu/Desktop/webcam/apriltags
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cqy/Desktop/webcam/apriltags/build
+CMAKE_BINARY_DIR = /home/qingyu/Desktop/webcam/apriltags/build
 
 # Utility rule file for tmp.
 
@@ -60,6 +60,6 @@ CMakeFiles/tmp.dir/clean:
 .PHONY : CMakeFiles/tmp.dir/clean
 
 CMakeFiles/tmp.dir/depend:
-	cd /home/cqy/Desktop/webcam/apriltags/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/cqy/Desktop/webcam/apriltags /home/cqy/Desktop/webcam/apriltags /home/cqy/Desktop/webcam/apriltags/build /home/cqy/Desktop/webcam/apriltags/build /home/cqy/Desktop/webcam/apriltags/build/CMakeFiles/tmp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/qingyu/Desktop/webcam/apriltags/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/qingyu/Desktop/webcam/apriltags /home/qingyu/Desktop/webcam/apriltags /home/qingyu/Desktop/webcam/apriltags/build /home/qingyu/Desktop/webcam/apriltags/build /home/qingyu/Desktop/webcam/apriltags/build/CMakeFiles/tmp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tmp.dir/depend
 

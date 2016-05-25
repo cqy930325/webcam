@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cqy/Desktop/webcam/apriltags
+CMAKE_SOURCE_DIR = /home/qingyu/Desktop/webcam/apriltags
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cqy/Desktop/webcam/apriltags/build
+CMAKE_BINARY_DIR = /home/qingyu/Desktop/webcam/apriltags/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -110,9 +110,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cqy/Desktop/webcam/apriltags/build/CMakeFiles /home/cqy/Desktop/webcam/apriltags/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/qingyu/Desktop/webcam/apriltags/build/CMakeFiles /home/qingyu/Desktop/webcam/apriltags/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cqy/Desktop/webcam/apriltags/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/qingyu/Desktop/webcam/apriltags/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
