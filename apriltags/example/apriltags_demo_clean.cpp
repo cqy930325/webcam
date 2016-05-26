@@ -23,14 +23,6 @@ using namespace std;
 #include <thread>
 #include <mutex>
 #include <chrono>
-#include <cstdlib>
-#include <cerrno>
-#include <curlpp/cURLpp.hpp>
-#include <curlpp/Easy.hpp>
-#include <curlpp/Options.hpp>
-#include <curlpp/Exception.hpp>
-
-
 const string usage = "\n"
   "Usage:\n"
   "  apriltags_demo [OPTION...] [IMG1 [IMG2...]]\n"
@@ -134,7 +126,6 @@ void wRo_to_euler(const Eigen::Matrix3d& wRo, double& yaw, double& pitch, double
 }
 
 
-
 class Demo {
 
   AprilTags::TagDetector* m_tagDetector;
@@ -151,6 +142,7 @@ class Demo {
   double m_fy;
   double m_px; // camera principal point
   double m_py;
+
   int m_deviceId; // camera id (in case of multiple cameras)
 
   list<string> m_imgNames;
@@ -165,31 +157,19 @@ class Demo {
 
 public:
   bool m_Available;
-  bool m_posReady;
-  int m_good;
   cv::VideoCapture m_cap;
   cv::Mat m_image;
   mutex image_mutex;
-  mutex pos_mutex;
-  double pos_x;
-  double pos_y;
-  double pos_z;
-  double pos_yaw;
-  double pos_roll;
-  double pos_pitch;
-
-
   // default constructor
   Demo() :
     // default settings, most can be modified through command line options (see below)
     m_tagDetector(NULL),
     m_tagCodes(AprilTags::tagCodes36h11),
     m_Available(false),
-    m_posReady(false),
     m_draw(true),
     m_arduino(false),
     m_timing(false),
-    m_good(0),
+
     m_width(640),
     m_height(480),
     m_tagSize(0.166),
@@ -368,7 +348,7 @@ public:
 
   }
 
-  void print_detection(AprilTags::TagDetection& detection){
+  void print_detection(AprilTags::TagDetection& detection) const {
     cout << "  Id: " << detection.id
          << " (Hamming: " << detection.hammingDistance << ")";
 
@@ -391,13 +371,7 @@ public:
     Eigen::Matrix3d fixed_rot = F*rotation;
     double yaw, pitch, roll;
     wRo_to_euler(fixed_rot, yaw, pitch, roll);
-    pos_x = translation(0);
-    pos_y = translation(1);
-    pos_z = translation(2);
-    pos_yaw = yaw;
-    pos_roll = roll;
-    pos_pitch = pitch;
-    m_good = detection.good ? 1 : 0;
+
     cout << "  distance=" << translation.norm()
          << "m, x=" << translation(0)
          << ", y=" << translation(1)
@@ -427,13 +401,15 @@ public:
       t0 = tic();
     }
     vector<AprilTags::TagDetection> detections = m_tagDetector->extractTags(image_gray);
+    if (m_timing) {
+      double dt = tic()-t0;
+      cout << "Extracting tags took " << dt << " seconds." << endl;
+    }
+
     // print out each detection
     cout << detections.size() << " tags detected:" << endl;
     for (int i=0; i<detections.size(); i++) {
       print_detection(detections[i]);
-    }
-    if (detections.size() == 0){
-      m_good = 0;
     }
 
     // show the current image including any detections
@@ -443,6 +419,28 @@ public:
         detections[i].draw(image);
       }
       imshow(windowName, image); // OpenCV call
+    }
+
+    // optionally send tag information to serial port (e.g. to Arduino)
+    if (m_arduino) {
+      if (detections.size() > 0) {
+        // only the first detected tag is sent out for now
+        Eigen::Vector3d translation;
+        Eigen::Matrix3d rotation;
+        detections[0].getRelativeTranslationRotation(m_tagSize, m_fx, m_fy, m_px, m_py,
+                                                     translation, rotation);
+        m_serial.print(detections[0].id);
+        m_serial.print(",");
+        m_serial.print(translation(0));
+        m_serial.print(",");
+        m_serial.print(translation(1));
+        m_serial.print(",");
+        m_serial.print(translation(2));
+        m_serial.print("\n");
+      } else {
+        // no tag detected: tag ID = -1
+        m_serial.print("-1,0.0,0.0,0.0\n");
+      }
     }
   }
 
@@ -466,6 +464,7 @@ public:
   // The processing loop where images are retrieved, tags detected,
   // and information about detections generated
   void loop() {
+
     cv::Mat image;
     cv::Mat image_gray;
     bool available = false;
@@ -482,10 +481,7 @@ public:
       }
       image_mutex.unlock();
       if(available){
-        pos_mutex.lock();
         processImage(image, image_gray);
-        m_posReady = true;
-        pos_mutex.unlock();
         frame++;
         available = false;
       }
@@ -515,83 +511,6 @@ void getImage(Demo* demo){
     //std::this_thread::sleep_for(std::chrono::milliseconds(100));
 	}
 }
-
-void sendPos(Demo* demo){
-  std::string url = "192.168.1.242:8000/pose";
-  bool posRdy;
-  double x,y,z,yaw,roll,pitch;
-  int good;
-  curlpp::Cleanup cleaner;
-  curlpp::Easy request;
-
-  request.setOpt(new curlpp::options::Url(url));
-  request.setOpt(new curlpp::options::Verbose(true));
-
-  std::list<std::string> header;
-  header.push_back("application/x-www-form-urlencoded");
-
-  request.setOpt(new curlpp::options::HttpHeader(header));
-  while(1){
-    //todo: use conditional variable
-    demo->pos_mutex.lock();
-    if(demo->m_posReady){
-      posRdy = demo->m_posReady;
-      x = demo->pos_x;
-      y = demo->pos_y;
-      z = demo->pos_z;
-      yaw = demo->pos_yaw;
-      roll = demo->pos_roll;
-      pitch = demo->pos_pitch;
-      good = demo->m_good;
-      demo->m_posReady = false;
-    }
-    demo->pos_mutex.unlock();
-
-    if(posRdy){
-      try {
-        std::string pose = "{\"good\":\"" + to_string(good) + "\","+"\"x\":\"" + to_string(x) + "\",\"y\":\"" + to_string(y) + "\",\"z\":\"" + to_string(z) + "\",\"yaw\":\"" + to_string(yaw) + "\",\"roll\":\"" + to_string(roll) + "\",\"pitch\":\"" + to_string(pitch) + "\"}";
-        std::cout << pose << endl;
-        request.setOpt(new curlpp::options::PostFields(pose));
-        request.setOpt(new curlpp::options::PostFieldSize(pose.length()));
-        request.perform();
-      }
-      catch ( curlpp::LogicError & e ) {
-        std::cout << e.what() << std::endl;
-      }
-      catch ( curlpp::RuntimeError & e ) {
-        std::cout << e.what() << std::endl;
-      }
-      posRdy = false;
-    }
-  }
-}
-void sendtesst(){
-  std::string url = "192.168.1.242:8000/pose";
-  bool posRdy;
-  double x,y,z,yaw,roll,pitch;
-  curlpp::Cleanup cleaner;
-  curlpp::Easy request;
-  request.setOpt(new curlpp::options::Url(url));
-  request.setOpt(new curlpp::options::Verbose(true));
-  std::list<std::string> header;
-  header.push_back("application/x-www-form-urlencoded");
-  request.setOpt(new curlpp::options::HttpHeader(header));
-  while(1){
-    //todo: use conditional variable
-    try {
-      request.setOpt(new curlpp::options::PostFields(url));
-      request.setOpt(new curlpp::options::PostFieldSize(url.length()));
-      request.perform();
-    }
-    catch ( curlpp::LogicError & e ) {
-      std::cout << e.what() << std::endl;
-    }
-    catch ( curlpp::RuntimeError & e ) {
-      std::cout << e.what() << std::endl;
-    }
-
-  }
-}
 // here is were everything begins
 int main(int argc, char* argv[]) {
   Demo demo;
@@ -607,10 +526,9 @@ int main(int argc, char* argv[]) {
     demo.setupVideo();
     thread imageThread(getImage,&demo);
     imageThread.detach();
-    thread dataThread(sendPos,&demo);
-    dataThread.detach();
     // the actual processing loop where tags are detected and visualized
     demo.loop();
   }
+
   return 0;
 }

@@ -5,6 +5,7 @@ import os
 from BaseHTTPServer import BaseHTTPRequestHandler
 from BaseHTTPServer import HTTPServer
 import json
+import sys
 
 import command
 from serialdevice import SerialDevice as Device
@@ -26,29 +27,53 @@ class WebAPIRequestHandler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         data = self.rfile.read(int(self.headers["Content-Length"]))
-        logger.debug(data)
-        if self.path == "/pos":
+        #logger.debug(data)
+        if self.path == "/pose":
             pos = json.loads(data);
-            self.wfile.write(json.dumps({"status":"ERROR", "msg":"invalid cmd"}))
+            print pos['good']
+            sys.stdout.flush()
+            cmd = command.Command()
+            if int(pos['good']) == 1:
+                print pos['x'],pos['y'],pos['z']
+                sys.stdout.flush()
+                go = json.dumps({"thr":"500","mov":"bwd","alpha":"90"})
+                cmd.load_json(go)
+            else:
+                stop = json.dumps({"stop":""})
+                cmd.load_json(stop)
+            self.send_response(200)
+            self.end_headers()
+            while (not hasattr(self, "device")):
+                try:
+                    self.device = Device()
+                except:
+                    pass
+            try:
+                # device = Device()
+                res = self.device.send(cmd)
+                self.wfile.write(res.to_json())
+            except Exception, e:
+                self.wfile.write(json.dumps({"status":"ERROR",
+                                             "msg": e.message}))
         else:
             try:
+                print data
+                sys.stdout.flush()
                 cmd = command.Command()
                 cmd.load_json(data)
             except command.InvalidCommand:
                 self.wfile.write(json.dumps({"status":"ERROR", "msg":"invalid cmd"}))
                 return
-
             self.send_response(200)
             self.end_headers()
             #self.wfile.write(data)
-
             while (not hasattr(self, "device")):
-    	    try:
-    	        self.device = Device()
-    	    except:
-    	        pass
+                try:
+                    self.device = Device()
+                except:
+                    pass
             try:
-                # device = Device()            
+                # device = Device()
                 res = self.device.send(cmd)
                 self.wfile.write(res.to_json())
             except Exception, e:
@@ -56,6 +81,6 @@ class WebAPIRequestHandler(BaseHTTPRequestHandler):
                                              "msg": e.message}))
 
 
-def run(): 
+def run():
     server = HTTPServer(("", 8000), WebAPIRequestHandler)
     server.serve_forever()
