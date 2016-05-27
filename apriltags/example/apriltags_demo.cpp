@@ -397,7 +397,7 @@ public:
     pos_yaw = yaw;
     pos_roll = roll;
     pos_pitch = pitch;
-    m_good = detection.good ? 1 : 0;
+    m_good = detection.id;
     cout << "  distance=" << translation.norm()
          << "m, x=" << translation(0)
          << ", y=" << translation(1)
@@ -572,7 +572,7 @@ void sendtesst(){
   curlpp::Cleanup cleaner;
   curlpp::Easy request;
   request.setOpt(new curlpp::options::Url(url));
-  request.setOpt(new curlpp::options::Verbose(true));
+  request.setOpt(new curlpp::options::Verbose(0));
   std::list<std::string> header;
   header.push_back("application/x-www-form-urlencoded");
   request.setOpt(new curlpp::options::HttpHeader(header));

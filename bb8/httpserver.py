@@ -6,7 +6,7 @@ from BaseHTTPServer import BaseHTTPRequestHandler
 from BaseHTTPServer import HTTPServer
 import json
 import sys
-
+import socket
 import command
 from serialdevice import SerialDevice as Device
 from log import logger
@@ -30,14 +30,24 @@ class WebAPIRequestHandler(BaseHTTPRequestHandler):
         #logger.debug(data)
         if self.path == "/pose":
             pos = json.loads(data);
-            print pos['good']
+            good = int(pos['good'])
+            print good
             sys.stdout.flush()
             cmd = command.Command()
             if int(pos['good']) == 1:
-                print pos['x'],pos['y'],pos['z']
+                print pos['y'],pos['z'],pos['yaw']
                 sys.stdout.flush()
-                go = json.dumps({"thr":"500","mov":"bwd","alpha":"90"})
-                cmd.load_json(go)
+                yaw = float(pos['yaw'])
+                x = float(pos['y'])
+                y = float(pos['z'])
+                cmd.to_Cmd(yaw,x,y)
+            elif good == 2:
+                x = float(pos['y'])
+                y = float(pos['z'])
+                sys.stdout.flush()
+                self.send_response(200)
+                self.end_headers()
+                return
             else:
                 stop = json.dumps({"stop":""})
                 cmd.load_json(stop)
@@ -81,6 +91,8 @@ class WebAPIRequestHandler(BaseHTTPRequestHandler):
                                              "msg": e.message}))
 
 
+
 def run():
     server = HTTPServer(("", 8000), WebAPIRequestHandler)
+    server.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR,1)
     server.serve_forever()
